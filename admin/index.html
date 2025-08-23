@@ -11,11 +11,11 @@
   </head>
   <body>
     <script>
-      // Auto open the CMS once Identity is ready
+      // open login if not authenticated
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => { if (!user) window.netlifyIdentity.open(); });
       }
-      // Start CMS
+      // start the CMS
       window.CMS && window.CMS.init();
     </script>
   </body>
