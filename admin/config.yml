@@ -2,8 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/media"
-public_folder: "/assets/media"
+site_url: "https://turan-talk.com"
+
+media_folder: "assets/media"      # where uploaded files are stored in the repo
+public_folder: "/assets/media"    # how those files are referenced in the site
+
+publish_mode: editorial_workflow
 
 collections:
   - name: "settings"
@@ -13,18 +17,24 @@ collections:
         name: "home"
         file: "content/home.json"
         fields:
-          - { label: "Banner image", name: "banner_image", widget: "image" }
-          - { label: "Profile image", name: "profile_image", widget: "image" }
-          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Banner image"
+            name: "banner_image"
+            widget: "image"
+          - label: "Profile image"
+            name: "profile_image"
+            widget: "image"
+          - label: "Bio"
+            name: "bio"
+            widget: "text"
           - label: "Podcasts"
             name: "podcasts"
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
-              - { label: "Length", name: "length", widget: "string" }
+              - { label: "Length", name: "length", widget: "string", hint: "e.g., 45 min" }
               - { label: "Cover image", name: "cover_image", widget: "image" }
-              - { label: "Play URL", name: "url", widget: "string" }
+              - { label: "Play URL", name: "url", widget: "string", hint: "YouTube or audio link" }
           - label: "Articles"
             name: "articles"
             widget: "list"
