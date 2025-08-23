@@ -4,108 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Turan Talk | Reason, Freethinking, Critical Thinking, and Awareness</title>
-  <meta name="description" content="Turan Talk! Here you will have access to my podcast hosted by myself and Arman, my articles and various discussions on freedom of thought and belief. IT IS FREE AND WILL ALWAYS BE. Enjoy!" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231a1a1a'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='52' fill='%23ffd700' font-family='Arial, Helvetica, sans-serif'%3ET%3C/text%3E%3C/svg%3E" />
-    <style>
-      <link rel="stylesheet" href="style.css">
-    :root { --bg:#f8f9fa; --fg:#222; --brand:#1a1a1a; --accent:#ffd700; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:#333; }
-    header { background:var(--brand); color:#fff; padding:1.4rem 1rem; text-align:center; }
-    header h1 { margin:0; letter-spacing:.5px; }
-    header p { margin:.35rem 0 0 0; opacity:.9; }
-    nav { margin-top:.6rem; }
-    nav a { color:var(--accent); text-decoration:none; font-weight:700; margin:0 .6rem; }
-    nav a:hover { text-decoration:underline; }
-    .wrap { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin: 2rem 0; background:#fff; border-radius:12px; box-shadow: 0 4px 18px rgba(0,0,0,.05); padding:1.25rem; }
-    h2 { margin-top:0; color:var(--fg); }
-    .grid2 { display:grid; grid-template-columns: 1fr; gap:1rem; }
-    @media(min-width:800px){ .grid2 { grid-template-columns: 1.2fr .8fr; } }
-    .card { padding:1rem; border:1px solid #eee; border-radius:10px; background:#fff; }
-    .btn { display:inline-block; padding:.7rem 1rem; border-radius:10px; border:2px solid var(--brand); color:var(--brand); text-decoration:none; font-weight:700; }
-    .btn:hover { background:var(--brand); color:#fff; }
-    footer { background:var(--brand); color:#fff; text-align:center; padding:1rem; margin-top:2rem; }
-    .muted { color:#666; font-size:.95rem; }
-    .embed { width:100%; border:0; border-radius:12px; }
-    ul.clean { margin:.5rem 0 0 1.25rem; }
-    .rtl { direction: rtl; font-family: 'Tahoma', Arial, Helvetica, sans-serif; }
-    a { color:#0a58ca; }
+  <meta name="description" content="Turan Talk! Here you will have access to my podcast hosted by myself and Arman, my articles and various discussions on freedom of thought and belief. IT IS FREE AND WILL ALWAYS BE. Enjoy!." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%235b8cff'/%3E%3Ctext x='50' y='58' font-size='40' text-anchor='middle' fill='white'%3ET%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* keep only very minimal inline overrides if needed */
   </style>
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 <body>
-  <header>
-    <h1>Turan Talk - توران تاک</h1>
-    <p>Reasoning, Critical Thinking, Enlightenment, Free Thought | خردورزی، تفکر نقادانه، روشنگری، تفکر آزاد</p>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#podcast">Podcast</a>
-      <a href="#blog">Blog</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand">
+        <span class="brand-badge">T</span>
+        Turan Talk
+      </a>
+      <nav class="nav-links">
+        <a href="#podcasts">Podcasts</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
-    <section id="home" class="grid2">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="glow"></div>
+    <div class="container hero-grid">
       <div>
-        <h2>Welcome</h2>
-        <p>Turan Talk! Here you will have access to my podcast hosted by myself and Arman, my articles and various discussions on freedom of thought and belief. IT IS FREE AND WILL ALWAYS BE. Enjoy!.</p>
-        <p><a class="btn" href="#podcast">Listen to the latest episode</a></p>
+        <h1>Welcome to <span style="color:var(--brand)">Turan Talk</span></h1>
+        <p class="lead">Reason, Freethinking, Critical Thinking, and Awareness — all in one place.</p>
+        <div class="hero-cta">
+          <a href="#podcasts" class="button primary">🎙 Listen to Podcasts</a>
+          <a href="#articles" class="button ghost">📖 Read Articles</a>
+        </div>
       </div>
-      <div class="card rtl">
-        <strong>خوش آمدید!</strong>
-        <p>تــوران تاک! اینجا شما به پادکست من و آرمان، مقالاتم و بحث‌ های مختلف در مورد آزادی اندیشه و باور دسترسی خواهید داشت. این همه رایگان است و همیشه رایگان خواهد ماند. لذت ببرید!</p>
-      </div>
-    </section>
-
-    <section id="podcast">
-      <h2>Podcast</h2>
-      <iframe class="embed" src="https://open.spotify.com/embed/show/7gCPnubuK7ozrWox69vKB9" height="232" allowtransparency="true" allow="encrypted-media"></iframe>
-      <p style="margin-top:1rem;">
-        <a class="btn" href="https://open.spotify.com/show/7gCPnubuK7ozrWox69vKB9?si=mEQ1OQ_TSf6nHXWaH1oaHA" target="_blank" rel="noopener">Open on Spotify</a>
-        <a class="btn" href="https://www.youtube.com/@TuranTalk" target="_blank" rel="noopener">YouTube Channel</a>
-      </p>
-      <div class="card">
-        <strong>Latest topics</strong>
-        <ul class="clean">
-          <li>Awareness, what it means and why it matters</li>
-          <li>Homer and the birth of epic storytelling</li>
-          <li>Critical thinking tools for everyday life</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="blog">
-      <h2>Blog</h2>
-      <p>Articles coming soon. You can create a file like <code>awareness.html</code> and link to it here.</p>
-    </section>
-
-    <section id="about" class="grid2">
       <div>
-        <h2>About</h2>
-        <p>Hosted by Turan Freethinker and Arman. We invite honest conversations and respectful critique to help the Afghan community grow in knowledge and freedom.</p>
+        <img src="https://via.placeholder.com/500x350" alt="Banner image" class="float" />
       </div>
-      <div class="card rtl">
-        <strong>دربارهٔ ما</strong>
-        <p>من و آرمان میزبانان پادکست هستیم. ما به گفتگوی سالم و نقد سازنده باور داریم تا جامعهٔ افغان به آگاهی و آزادی نزدیک‌ تر شود.</p>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="profile">
+        <img src="https://via.placeholder.com/200" alt="Profile picture" class="avatar">
+        <div>
+          <p class="name">Turan Freethinker</p>
+          <p class="bio">Host of Turan Talk. I share podcasts, articles, and discussions on freedom of thought and belief. Always free, always open to new ideas.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <p><label>Your name <br><input type="text" name="name" required></label></p>
-        <p><label>Your email <br><input type="email" name="email" required></label></p>
-        <p><label>Your message <br><textarea name="message" rows="5" required></textarea></label></p>
-        <p><button class="btn" type="submit">Send</button></p>
-      </form>
-      <p class="muted">Or email us directly, <a href="mailto:turanfreethinker@gmail.com">turanfreethinker@gmail.com</a></p>
-    </section>
-  </main>
+  <!-- Podcasts Section -->
+  <section class="section" id="podcasts">
+    <div class="container">
+      <h2 class="section-title">Podcasts</h2>
+      <p class="section-sub">Latest episodes from Turan Talk</p>
+      <div class="pod-list">
+        <div class="pod-item">
+          <img src="https://via.placeholder.com/64" alt="Episode cover" class="thumb">
+          <div class="meta">
+            <strong>Episode 1: Homer & the Dawn of Philosophy</strong><br>
+            <small>Aug 2025 · 45 min</small>
+          </div>
+          <div class="actions">
+            <a href="#" class="button primary">▶ Play</a>
+          </div>
+        </div>
+        <div class="pod-item">
+          <img src="https://via.placeholder.com/64" alt="Episode cover" class="thumb">
+          <div class="meta">
+            <strong>Episode 2: Hesiod & Theogony</strong><br>
+            <small>Aug 2025 · 40 min</small>
+          </div>
+          <div class="actions">
+            <a href="#" class="button primary">▶ Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Turan Talk • <a href="mailto:turanfreethinker@gmail.com" style="color:#fff;text-decoration:underline;">turanfreethinker@gmail.com</a></p>
+  <!-- Articles Section -->
+  <section class="section" id="articles">
+    <div class="container">
+      <h2 class="section-title">Articles</h2>
+      <p class="section-sub">Thoughts, essays, and reflections</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250" alt="Article banner">
+          <div class="body">
+            <div class="eyebrow">Philosophy</div>
+            <h3>Dogmatic Thinking in Religious Societies</h3>
+            <p>How dogma shapes communities and prevents critical thought.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250" alt="Article banner">
+          <div class="body">
+            <div class="eyebrow">Ethics</div>
+            <h3>Morality Beyond Religion</h3>
+            <p>Building an ethical society on rationality and solidarity.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250" alt="Article banner">
+          <div class="body">
+            <div class="eyebrow">Science</div>
+            <h3>Philosophy & Modern Knowledge</h3>
+            <p>How philosophy remains vital in the scientific age.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container grid cols-2">
+      <div>
+        <p>&copy; 2025 Turan Talk. All rights reserved.</p>
+      </div>
+      <div class="socials">
+        <a href="https://youtube.com" target="_blank">📺 YouTube</a>
+        <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+        <a href="https://github.com/turanfreethinker" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
