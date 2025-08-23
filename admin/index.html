@@ -8,21 +8,48 @@
     <style>
       html,body{height:100%;margin:0}
       #status{height:100%;display:grid;place-items:center;font:16px system-ui}
+      code{background:#f4f4f4;padding:2px 4px;border-radius:4px}
     </style>
   </head>
   <body>
     <div id="status">Loading CMS…</div>
     <script>
-      function loadCMS(url, fallback){
-        var s=document.createElement('script');
-        s.src=url; s.defer=true;
-        s.onload=function(){ document.getElementById('status').remove(); };
-        s.onerror=function(){ fallback ? loadCMS(fallback, null) : document.getElementById('status').textContent='Failed to load CMS script'; };
+      // Try multiple CDNs and filenames
+      const candidates = [
+        "https://cdn.jsdelivr.net/npm/netlify-cms-app@2/dist/netlify-cms.min.js",
+        "https://cdn.jsdelivr.net/npm/netlify-cms-app@2/dist/netlify-cms.js",
+        "https://unpkg.com/netlify-cms-app@2/dist/netlify-cms.min.js",
+        "https://unpkg.com/netlify-cms-app@2/dist/netlify-cms.js",
+        "https://cdn.jsdelivr.net/npm/netlify-cms@2/dist/netlify-cms.min.js",
+        "https://cdn.jsdelivr.net/npm/netlify-cms@2/dist/netlify-cms.js",
+        "https://unpkg.com/netlify-cms@2/dist/netlify-cms.min.js",
+        "https://unpkg.com/netlify-cms@2/dist/netlify-cms.js",
+        "https://esm.sh/netlify-cms-app@2/dist/netlify-cms.js"
+      ];
+
+      function tryNext(queue, firstErr) {
+        if (!queue.length) {
+          document.getElementById("status").innerHTML =
+            "Failed to load CMS script<br><small>" +
+            (firstErr ? "<code>" + firstErr + "</code>" : "All CDNs blocked") +
+            "</small>";
+          return;
+        }
+        const url = queue.shift();
+        const s = document.createElement("script");
+        s.src = url;
+        s.defer = true;
+        s.onload = function () {
+          document.getElementById("status").remove();
+          // CMS auto-inits when loaded
+        };
+        s.onerror = function (e) {
+          tryNext(queue, firstErr || ("Network error " + url));
+        };
         document.body.appendChild(s);
       }
-      // try jsDelivr first, fall back to unpkg
-      loadCMS('https://cdn.jsdelivr.net/npm/netlify-cms-app@^2.0.0/dist/netlify-cms.js',
-              'https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js');
+
+      tryNext(candidates.slice());
     </script>
   </body>
 </html>
