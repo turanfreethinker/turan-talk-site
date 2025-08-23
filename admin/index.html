@@ -4,11 +4,25 @@
     <meta charset="utf-8" />
     <title>Content Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Load Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      html,body{height:100%;margin:0}
+      #status{height:100%;display:grid;place-items:center;font:16px system-ui}
+    </style>
   </head>
   <body>
-    <!-- Load Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js"></script>
+    <div id="status">Loading CMS…</div>
+    <script>
+      function loadCMS(url, fallback){
+        var s=document.createElement('script');
+        s.src=url; s.defer=true;
+        s.onload=function(){ document.getElementById('status').remove(); };
+        s.onerror=function(){ fallback ? loadCMS(fallback, null) : document.getElementById('status').textContent='Failed to load CMS script'; };
+        document.body.appendChild(s);
+      }
+      // try jsDelivr first, fall back to unpkg
+      loadCMS('https://cdn.jsdelivr.net/npm/netlify-cms-app@^2.0.0/dist/netlify-cms.js',
+              'https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js');
+    </script>
   </body>
 </html>
