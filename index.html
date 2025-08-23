@@ -10,6 +10,8 @@
     /* keep only very minimal inline overrides if needed */
   </style>
   <link rel="stylesheet" href="style.css?v=1">
+   <!-- Netlify Identity widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -137,6 +139,20 @@
       </div>
     </div>
   </footer>
-
+ <!-- Netlify Identity handling -->
+  <script>
+    if (window.netlifyIdentity) {
+      // If you arrive via an invite link, open the widget so you can finish signup
+      window.netlifyIdentity.on("init", user => {
+        if (!user && window.location.hash.includes("invite_token")) {
+          window.netlifyIdentity.open("signup");
+        }
+      });
+      // After login, go to the CMS
+      window.netlifyIdentity.on("login", () => {
+        location.href = "/admin/";
+      });
+    }
+  </script>
 </body>
 </html>
