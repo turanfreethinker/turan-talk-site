@@ -2,45 +2,35 @@ backend:
   name: git-gateway
   branch: main
 
-site_url: "https://turan-talk.com"
-
-media_folder: "assets/media"      # where uploaded files are stored in the repo
-public_folder: "/assets/media"    # how those files are referenced in the site
-
-publish_mode: editorial_workflow
+media_folder: "assets/media"
+public_folder: "/assets/media"
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
+  - name: settings
+    label: Site Settings
     files:
-      - label: "Home Content"
-        name: "home"
-        file: "content/home.json"
+      - label: Home Content
+        name: home
+        file: content/home.json
         fields:
-          - label: "Banner image"
-            name: "banner_image"
-            widget: "image"
-          - label: "Profile image"
-            name: "profile_image"
-            widget: "image"
-          - label: "Bio"
-            name: "bio"
-            widget: "text"
-          - label: "Podcasts"
-            name: "podcasts"
-            widget: "list"
+          - { label: Banner image,  name: banner_image,  widget: image }
+          - { label: Profile image, name: profile_image, widget: image }
+          - { label: Bio,          name: bio,           widget: text }
+          - label: Podcasts
+            name: podcasts
+            widget: list
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
-              - { label: "Length", name: "length", widget: "string", hint: "e.g., 45 min" }
-              - { label: "Cover image", name: "cover_image", widget: "image" }
-              - { label: "Play URL", name: "url", widget: "string", hint: "YouTube or audio link" }
-          - label: "Articles"
-            name: "articles"
-            widget: "list"
+              - { label: Title,        name: title,        widget: string }
+              - { label: Date,         name: date,         widget: datetime, format: "YYYY-MM-DD" }
+              - { label: Length,       name: length,       widget: string }
+              - { label: Cover image,  name: cover_image,  widget: image }
+              - { label: Play URL,     name: url,          widget: string }
+          - label: Articles
+            name: articles
+            widget: list
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Summary", name: "summary", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Link", name: "url", widget: "string" }
+              - { label: Title,     name: title,     widget: string }
+              - { label: Category,  name: category,  widget: string }
+              - { label: Summary,   name: summary,   widget: text }
+              - { label: Image,     name: image,     widget: image }
+              - { label: Link,      name: url,       widget: string }
