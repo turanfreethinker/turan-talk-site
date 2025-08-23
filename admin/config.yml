@@ -2,17 +2,39 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"   # where uploaded files go
-public_folder: "/images/uploads"
+media_folder: "assets/media"
+public_folder: "/assets/media"
+
+site_url: "https://turan-talk.com"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "settings"
+    label: "Site Settings"
     files:
-      - file: "index.html"
-        label: "Homepage"
+      - label: "Home Content"
         name: "home"
+        file: "content/home.json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Banner image", name: "banner_image", widget: "image", allow_multiple: false }
+          - { label: "Profile image", name: "profile_image", widget: "image", allow_multiple: false }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Podcasts"
+            name: "podcasts"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+              - { label: "Length", name: "length", widget: "string" }
+              - { label: "Cover image", name: "cover_image", widget: "image" }
+              - { label: "Play URL", name: "url", widget: "string" }
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Link", name: "url", widget: "string" }
 
+publish_mode: simple
