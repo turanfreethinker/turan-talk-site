@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turan Talk | Philosophy & Freethinking</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -21,10 +21,13 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+<section class="hero" data-hero-banner>
+  <div class="hero__inner">
+    <img data-profile-image alt="Profile" style="width:120px;border-radius:50%;">
     <h2>Welcome to Turan Talk</h2>
-    <p>Reason, Freethinking, Critical Thinking, and Awareness — all in one place.</p>
-  </section>
+    <p data-bio>Reason, Freethinking, Critical Thinking, and Awareness, all in one place.</p>
+  </div>
+</section>
 
   <!-- About -->
   <section id="about">
@@ -33,26 +36,16 @@
   </section>
 
   <!-- Podcasts -->
-  <section id="podcasts">
-    <h2>Podcasts</h2>
-    <ul>
-      <li>Episode 1: Homer & the Dawn of Philosophy</li>
-      <li>Episode 2: Hesiod & Theogony</li>
-    </ul>
-  </section>
+<section id="podcasts">
+  <h2>Podcasts</h2>
+  <div id="podcast-list"></div>
+</section>
 
-  <!-- Articles -->
-  <section id="articles">
-    <h2>Articles</h2>
-    <div>
-      <h3>Dogmatic Thinking in Religious Societies</h3>
-      <p>How dogma shapes communities and prevents critical thought.</p>
-    </div>
-    <div>
-      <h3>Morality Beyond Religion</h3>
-      <p>Building an ethical society on rationality and solidarity.</p>
-    </div>
-  </section>
+<!-- Articles -->
+<section id="articles">
+  <h2>Articles</h2>
+  <div id="article-list"></div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -64,5 +57,52 @@
     </p>
   </footer>
 
+  <script>
+fetch('/content/home.json')
+  .then(r => r.json())
+  .then(d => {
+    // Hero banner, profile, bio
+    const hero = document.querySelector('[data-hero-banner]');
+    if (hero && d.banner_image) hero.style.backgroundImage = `url(${d.banner_image})`;
+    const profile = document.querySelector('[data-profile-image]');
+    if (profile && d.profile_image) profile.src = d.profile_image;
+    const bio = document.querySelector('[data-bio]');
+    if (bio && d.bio) bio.textContent = d.bio;
+
+    // Podcasts list
+    const pWrap = document.getElementById('podcast-list');
+    if (pWrap && Array.isArray(d.podcasts)) {
+      d.podcasts.forEach(ep => {
+        const card = document.createElement('div');
+        card.className = 'podcast-card';
+        card.innerHTML = `
+          <img src="${ep.cover_image}" alt="${ep.title}" class="card-img">
+          <h3>${ep.title}</h3>
+          <p>${ep.date}, ${ep.length}</p>
+          <a href="${ep.url}" target="_blank" rel="noopener">Listen</a>
+        `;
+        pWrap.appendChild(card);
+      });
+    }
+
+    // Articles list
+    const aWrap = document.getElementById('article-list');
+    if (aWrap && Array.isArray(d.articles)) {
+      d.articles.forEach(a => {
+        const card = document.createElement('div');
+        card.className = 'article-card';
+        card.innerHTML = `
+          <img src="${a.image}" alt="${a.title}" class="card-img">
+          <h3>${a.title}</h3>
+          <p><em>${a.category}</em></p>
+          <p>${a.summary}</p>
+          <a href="${a.url}">Read more</a>
+        `;
+        aWrap.appendChild(card);
+      });
+    }
+  })
+  .catch(err => { /* silent fail, page still works */ });
+</script>
 </body>
 </html>
