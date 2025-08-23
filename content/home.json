@@ -1,1 +1,44 @@
-
+{
+  "banner_image": "/assets/media/hero-banner.jpg",
+  "profile_image": "/assets/media/profile.jpg",
+  "bio": "Host of Turan Talk. I share podcasts, articles, and discussions on freedom of thought and belief. Always free, always open to new ideas.",
+  "podcasts": [
+    {
+      "title": "Episode 1: Homer and the Dawn of Philosophy",
+      "date": "2025-08-20",
+      "length": "45 min",
+      "cover_image": "/assets/media/ep1.jpg",
+      "url": "https://youtube.com" 
+    },
+    {
+      "title": "Episode 2: Hesiod and Theogony",
+      "date": "2025-08-23",
+      "length": "40 min",
+      "cover_image": "/assets/media/ep2.jpg",
+      "url": "https://youtube.com"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Dogmatic Thinking in Religious Societies",
+      "category": "Philosophy",
+      "summary": "How dogma shapes communities and prevents critical thought.",
+      "image": "/assets/media/a1.jpg",
+      "url": "#"
+    },
+    {
+      "title": "Morality Beyond Religion",
+      "category": "Ethics",
+      "summary": "Building an ethical society on rationality and solidarity.",
+      "image": "/assets/media/a2.jpg",
+      "url": "#"
+    },
+    {
+      "title": "Philosophy and Modern Knowledge",
+      "category": "Science",
+      "summary": "How philosophy remains vital in the scientific age.",
+      "image": "/assets/media/a3.jpg",
+      "url": "#"
+    }
+  ]
+}
