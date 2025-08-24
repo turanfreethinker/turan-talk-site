@@ -93,7 +93,7 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 
 /* Avatar, mobile first */
 .hero__inner img{
-  width: 88px;              /* phones, adjust here */
+  width: 15px;              /* phones, adjust here */
   aspect-ratio: 1 / 1;
   height: auto;
   max-width: none;           /* ignore global img max-width */
