@@ -269,7 +269,7 @@ a:focus-visible, button:focus-visible{
 
 /* Center the bios in their columns, with comfy line length */
 #about .about-block {
-  text-align: center;
+  text-align: left;
   max-width: 60ch;
   margin: 0 auto;
   padding: clamp(10px, 1.5vw, 18px);
@@ -278,7 +278,7 @@ a:focus-visible, button:focus-visible{
 /* Override earlier left/right alignment rules */
 #about .about-block[dir="ltr"],
 #about .about-block[dir="rtl"] {
-  text-align: center;
+  text-align: left;
 }
 
 /* Keep nice Arabic-script typography for Dari */
