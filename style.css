@@ -105,7 +105,7 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 }
 
 /* Larger spacing and avatar on desktop */
-@media (min-width: 800px){
+@media (min-width: 500px){
   .hero__inner{ padding: 4rem 1.25rem 4rem; }
   .hero__inner img{
     width: 150px;            /* desktop size, adjust here */
