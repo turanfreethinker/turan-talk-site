@@ -93,22 +93,22 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 
 /* Avatar, mobile first */
 .hero__inner img{
-  width: 40px;              /* phones, adjust here */
+  width: 40px;
   aspect-ratio: 1 / 1;
   height: auto;
-  max-width: none;           /* ignore global img max-width */
+  max-width: none;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,.6);
   margin: 0 auto .9rem;
-  transform: translateY(-77px); /* lift into the top bar on phones */
+  transform: translateY(-77px);
 }
 
 /* Larger spacing and avatar on desktop */
 @media (min-width: 500px){
   .hero__inner{ padding: 4rem 1.25rem 4rem; }
   .hero__inner img{
-    width: 150px;            /* desktop size, adjust here */
+    width: 150px;
     transform: translateY(-130px);
   }
   .hero__inner h2{ margin-top: 2rem; }
@@ -121,6 +121,68 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 #about{ max-width: var(--container); margin: 0 auto; }
 #about h2{ color: #fff; }
 #about p{ color: var(--muted); }
+
+/* Bilingual section heading */
+.section-title {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.25rem;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 0 0 0.75rem 0;
+}
+.title-en { text-align: left; }
+.title-fa {
+  text-align: right;
+  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
+}
+/* Side by side on desktop */
+@media (min-width: 900px) {
+  .section-title {
+    grid-template-columns: 1fr 1fr;
+    align-items: baseline;
+  }
+}
+
+/* About layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+/* two columns on desktop */
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 2rem;
+  }
+}
+
+/* “Box” with no visible outline */
+.about-block {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 16px;
+  padding: clamp(14px, 2vw, 22px);
+}
+.about-block p { margin: 0; }
+
+/* Typography and alignment */
+.about-block[dir="ltr"] {
+  text-align: left;
+  max-width: 60ch;
+  margin-right: auto;        /* English left */
+}
+.about-block[dir="rtl"] {
+  text-align: right;
+  max-width: 60ch;
+  margin-left: auto;         /* Dari right */
+  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+}
 
 /* =========
    Cards for Podcasts and Articles
@@ -135,7 +197,6 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 @media (min-width: 980px){
   #podcast-list, #article-list{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-
 .podcast-card, .article-card{
   background: var(--panel);
   border: 1px solid var(--line);
@@ -178,111 +239,4 @@ footer a:hover{ text-decoration: underline; }
 }
 a:focus-visible, button:focus-visible{
   outline: 2px solid var(--accent); outline-offset: 2px;
-}
-
-/* Bilingual section heading */
-.section-title {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 0.25rem;
-  font-weight: 700;              /* keep it bold */
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  margin: 0 0 0.75rem 0;
-}
-
-.title-en { text-align: left; }
-
-.title-fa {
-  text-align: right;
-  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
-}
-
-/* Side by side on desktop */
-@media (min-width: 900px) {
-  .section-title {
-    grid-template-columns: 1fr 1fr;
-    align-items: baseline;
-  }
-}
-
-/* About layout */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-
-/* two columns on desktop */
-@media (min-width: 900px) {
-  .about-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: start;
-    column-gap: 2rem;
-  }
-}
-
-/* “Box” with no visible outline */
-.about-block {
-  background: transparent;   /* no visible box color */
-  border: 0;                 /* remove outline */
-  box-shadow: none;          /* no shadow */
-  border-radius: 16px;       /* keep a soft shape */
-  padding: clamp(14px, 2vw, 22px);
-}
-
-.about-block p { margin: 0; } /* tighten spacing */
-
-/* Typography and alignment */
-.about-block[dir="ltr"] {
-  text-align: left;
-  max-width: 60ch;
-  margin-right: auto;        /* hugs the left column edge */
-}
-
-.about-block[dir="rtl"] {
-  text-align: right;
-  max-width: 60ch;
-  margin-left: auto;         /* hugs the right column edge */
-  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
-  line-height: 1.9;
-}
-
-/* Bilingual heading, keep from earlier */
-.section-title {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 0.25rem;
-  font-weight: 700;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  margin: 0 0 0.75rem 0;
-}
-@media (min-width: 900px) {
-  .section-title { grid-template-columns: 1fr 1fr; align-items: baseline; }
-}
-.title-en { text-align: left; }
-.title-fa { text-align: right; font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif; }
-
-/* Tighten the gap between the About heading and text */
-#about .section-title { margin-bottom: 0.35rem; }
-#about .about-grid { margin-top: 0.25rem; }
-
-/* Center the bios in their columns, with comfy line length */
-#about .about-block {
-  text-align: centered;
-  max-width: 60ch;
-  margin: 0 auto;
-  padding: clamp(10px, 1.5vw, 18px);
-}
-
-/* Override earlier left/right alignment rules */
-#about .about-block[dir="ltr"],
-#about .about-block[dir="rtl"] {
-  text-align: centered;
-}
-
-/* Keep nice Arabic-script typography for Dari */
-#about .about-block[dir="rtl"] {
-  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
-  line-height: 1.9;
 }
