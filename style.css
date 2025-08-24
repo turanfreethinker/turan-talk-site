@@ -169,7 +169,7 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
   border: 0;
   box-shadow: none;
   border-radius: 16px;
-  padding: clamp(14px, 2vw, 22px);
+  padding: clamp(14px, 2vw, 22px) 0; /* change: top/bottom only */
 }
 .about-block p { margin: 0; }
 
