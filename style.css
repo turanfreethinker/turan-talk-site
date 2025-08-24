@@ -219,14 +219,25 @@ a:focus-visible, button:focus-visible{
 }
 .hero__inner{ padding-top: clamp(2.5rem, 6vw, 6.5rem); }
 .hero__inner h2{ margin-top: clamp(1.25rem, 2.2vw, 2.25rem); }
-/* Fix avatar shape and size (circle on all screens) */
+/* Mobile default, smaller avatar */
 .hero__inner img{
-  width: clamp(140px, 12vw, 220px);   /* grows on desktop, stays sane on phone */
-  aspect-ratio: 1 / 1;                /* keep it perfectly square */
-  height: auto;                       /* let aspect-ratio compute the height */
-  max-width: none;                    /* ignore the global img { max-width:100% } */
+  width: 110px;              /* change this number to taste for phones */
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: none;
   object-fit: cover;
   border-radius: 50%;
+  transform: translateY(-70px);  /* raise into the top bar on phones */
+}
+
+/* Desktop, larger avatar */
+@media (min-width: 1000px){
+  .hero__inner img{
+    width: 200px;            /* change this number for PCs, try 220px if you want bigger */
+    transform: translateY(-130px); /* raise it a bit more on PCs */
+  }
+  .hero__inner h2{ margin-top: 2rem; }   /* push “Welcome…” lower on PCs */
+  .hero__inner p{ margin-top: .75rem; }
 }
 
 /* Push the “Welcome to Turan Talk” line lower on larger screens */
