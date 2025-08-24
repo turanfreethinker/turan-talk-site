@@ -219,3 +219,19 @@ a:focus-visible, button:focus-visible{
 }
 .hero__inner{ padding-top: clamp(2.5rem, 6vw, 6.5rem); }
 .hero__inner h2{ margin-top: clamp(1.25rem, 2.2vw, 2.25rem); }
+/* Fix avatar shape and size (circle on all screens) */
+.hero__inner img{
+  width: clamp(140px, 12vw, 220px);   /* grows on desktop, stays sane on phone */
+  aspect-ratio: 1 / 1;                /* keep it perfectly square */
+  height: auto;                       /* let aspect-ratio compute the height */
+  max-width: none;                    /* ignore the global img { max-width:100% } */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Push the “Welcome to Turan Talk” line lower on larger screens */
+@media (min-width: 1000px){
+  .hero__inner{ padding-top: 6rem; }  /* creates room under the avatar */
+  .hero__inner h2{ margin-top: 2rem; }
+  .hero__inner p{ margin-top: .75rem; }
+}
