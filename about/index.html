@@ -1,24 +1,43 @@
-<!-- about/index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>About | Turan Talk</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Optional font, safe to keep or remove -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@600;800&display=swap" rel="stylesheet">
   <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
+  <header>
+    <nav>
       <a href="/">Home</a>
       <a href="/podcasts/">Podcasts</a>
       <a href="/articles/">Articles</a>
       <a href="/about/">About</a>
     </nav>
   </header>
+
+  <!-- Keep main as a container, but do NOT add another .container inside #about -->
   <main class="container">
-    <h1>About Turan Talk</h1>
-    <p>A friendly doorway to enlightenment, philosophy, and critical thinking for Afghan community; contact: turanfreethinker@gmail.com.</p>
+    <section id="about" class="section">
+      <h2 class="section-title">
+        <span class="title-en" lang="en" dir="ltr">About Me</span>
+        <span class="title-fa" lang="fa" dir="rtl">دربارهٔ من</span>
+      </h2>
+
+      <div class="about-grid">
+        <!-- English, left -->
+        <div class="about-block" lang="en" dir="ltr">
+          <p>Host of Turan Talk. I share podcasts, articles, and discussions on freedom of thought and belief, always free, always open to new ideas; contact: <a href="mailto:turanfreethinker@gmail.com">turanfreethinker@gmail.com</a>.</p>
+        </div>
+
+        <!-- Dari, right -->
+        <div class="about-block" lang="fa" dir="rtl">
+          <p>من توران فری‌تینکر هستم، پادکست‌ها، مقاله‌ها و تأملاتم را دربارهٔ فلسفه، روشنگری، و آزادی اندیشه با جامعهٔ افغان به اشتراک می‌گذارم، همیشه آزاد، همیشه پذیرای ایده‌های نو.</p>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
