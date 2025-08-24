@@ -278,7 +278,7 @@ a:focus-visible, button:focus-visible{
 /* Override earlier left/right alignment rules */
 #about .about-block[dir="ltr"],
 #about .about-block[dir="rtl"] {
-  text-align: left;
+  text-align: centered;
 }
 
 /* Keep nice Arabic-script typography for Dari */
