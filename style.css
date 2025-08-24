@@ -176,13 +176,11 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 /* Typography and alignment */
 .about-block[dir="ltr"]{
   text-align: left;
-  max-width: 60ch;
   margin-left: 0;        /* add this */
   margin-right: auto;    /* keep this */
 }
 .about-block[dir="rtl"]{
   text-align: right;
-  max-width: 60ch;
   margin-right: 0;       /* add this */
   margin-left: auto;     /* keep this */
   font-family: "Vazirmatn","Noto Naskh Arabic","Noto Nastaliq Urdu",Tahoma,Arial,sans-serif;
