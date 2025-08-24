@@ -204,3 +204,61 @@ a:focus-visible, button:focus-visible{
     align-items: baseline;
   }
 }
+
+/* About layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* two columns on desktop */
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 2rem;
+  }
+}
+
+/* “Box” with no visible outline */
+.about-block {
+  background: transparent;   /* no visible box color */
+  border: 0;                 /* remove outline */
+  box-shadow: none;          /* no shadow */
+  border-radius: 16px;       /* keep a soft shape */
+  padding: clamp(14px, 2vw, 22px);
+}
+
+.about-block p { margin: 0; } /* tighten spacing */
+
+/* Typography and alignment */
+.about-block[dir="ltr"] {
+  text-align: left;
+  max-width: 60ch;
+  margin-right: auto;        /* hugs the left column edge */
+}
+
+.about-block[dir="rtl"] {
+  text-align: right;
+  max-width: 60ch;
+  margin-left: auto;         /* hugs the right column edge */
+  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+}
+
+/* Bilingual heading, keep from earlier */
+.section-title {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.25rem;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 0 0 0.75rem 0;
+}
+@media (min-width: 900px) {
+  .section-title { grid-template-columns: 1fr 1fr; align-items: baseline; }
+}
+.title-en { text-align: left; }
+.title-fa { text-align: right; font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif; }
