@@ -221,7 +221,7 @@ a:focus-visible, button:focus-visible{
 .hero__inner h2{ margin-top: clamp(1.25rem, 2.2vw, 2.25rem); }
 /* Mobile default, smaller avatar */
 .hero__inner img{
-  width: 80px;              /* change this number to taste for phones */
+  width: 160px;              /* change this number to taste for phones */
   aspect-ratio: 1 / 1;
   height: auto;
   max-width: none;
