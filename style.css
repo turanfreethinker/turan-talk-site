@@ -33,8 +33,11 @@ h3{ font-size: clamp(16px, 2.8vw, 19px); }
 p{ margin: 0 0 1rem; color: var(--muted); }
 
 /* Containers */
-section{ padding: 2.25rem 1rem; }
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.container { 
+  max-width: var(--container); 
+  margin: 0 auto; 
+  padding: 0;            /* was: 0 1rem */
+}
 
 /* =========
    Header + Nav
@@ -121,7 +124,7 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 #about{
   max-width: var(--container);
   margin: 0 auto;
-  padding: 2.25rem 0; /* removes the extra 1rem left/right from the default section rule */
+  padding: 2.25rem 1rem; /* was: 2.25rem 0 */
 }
 #about h2{ color: #fff; }
 #about p{ color: var(--muted); }
