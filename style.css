@@ -262,3 +262,27 @@ a:focus-visible, button:focus-visible{
 }
 .title-en { text-align: left; }
 .title-fa { text-align: right; font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif; }
+
+/* Tighten the gap between the About heading and text */
+#about .section-title { margin-bottom: 0.35rem; }
+#about .about-grid { margin-top: 0.25rem; }
+
+/* Center the bios in their columns, with comfy line length */
+#about .about-block {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: clamp(10px, 1.5vw, 18px);
+}
+
+/* Override earlier left/right alignment rules */
+#about .about-block[dir="ltr"],
+#about .about-block[dir="rtl"] {
+  text-align: center;
+}
+
+/* Keep nice Arabic-script typography for Dari */
+#about .about-block[dir="rtl"] {
+  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+}
