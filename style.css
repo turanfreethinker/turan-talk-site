@@ -118,10 +118,13 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 /* =========
    About
    ========= */
-#about{ max-width: var(--container); margin: 0 auto; }
+#about{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 2.25rem 0; /* removes the extra 1rem left/right from the default section rule */
+}
 #about h2{ color: #fff; }
 #about p{ color: var(--muted); }
-
 /* Bilingual section heading */
 .section-title {
   display: grid;
@@ -171,16 +174,18 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 .about-block p { margin: 0; }
 
 /* Typography and alignment */
-.about-block[dir="ltr"] {
+.about-block[dir="ltr"]{
   text-align: left;
   max-width: 60ch;
-  margin-right: auto;        /* English left */
+  margin-left: 0;        /* add this */
+  margin-right: auto;    /* keep this */
 }
-.about-block[dir="rtl"] {
+.about-block[dir="rtl"]{
   text-align: right;
   max-width: 60ch;
-  margin-left: auto;         /* Dari right */
-  font-family: "Vazirmatn", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, Arial, sans-serif;
+  margin-right: 0;       /* add this */
+  margin-left: auto;     /* keep this */
+  font-family: "Vazirmatn","Noto Naskh Arabic","Noto Nastaliq Urdu",Tahoma,Arial,sans-serif;
   line-height: 1.9;
 }
 
