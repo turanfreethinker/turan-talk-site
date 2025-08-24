@@ -211,3 +211,11 @@ a:focus-visible, button:focus-visible{
   .hero__inner img{ transform: translateY(-110px); }
   .hero__inner h2{ margin-top: 1.5rem; }
 }
+/* Fluid sizing across screens */
+.hero__inner img{
+  width: clamp(120px, 12vw, 220px);
+  height: clamp(120px, 12vw, 220px);
+  transform: translateY(clamp(-90px, -11vw, -140px));
+}
+.hero__inner{ padding-top: clamp(2.5rem, 6vw, 6.5rem); }
+.hero__inner h2{ margin-top: clamp(1.25rem, 2.2vw, 2.25rem); }
