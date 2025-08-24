@@ -183,3 +183,31 @@ a:focus-visible, button:focus-visible{
   .hero__inner{ padding: 4rem 1.25rem; }
 }
 .hero__inner h2{ text-shadow: 0 2px 6px rgba(0,0,0,.45); }
+
+/* --- Position profile above, move title down --- */
+.hero__inner{
+  /* a bit less top padding so there is room for the lifted avatar */
+  padding-top: 2.25rem;
+}
+
+.hero__inner img{
+  /* lift the circle into the top bar */
+  transform: translateY(-90px);
+}
+
+/* put the heading below the avatar, not overlapped */
+.hero__inner h2{
+  margin-top: 1.25rem;
+}
+
+/* keep the tagline comfortably below the heading */
+.hero__inner p{
+  margin-top: .5rem;
+}
+
+/* tune for larger screens */
+@media (min-width: 900px){
+  .hero__inner{ padding-top: 2.75rem; }
+  .hero__inner img{ transform: translateY(-110px); }
+  .hero__inner h2{ margin-top: 1.5rem; }
+}
