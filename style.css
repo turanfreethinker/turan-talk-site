@@ -108,7 +108,7 @@ header nav a:hover, header nav a:focus-visible{ color: #fff; outline: 2px solid 
 @media (min-width: 1000px){
   .hero__inner{ padding: 4rem 1.25rem 4rem; }
   .hero__inner img{
-    width: 200px;            /* desktop size, adjust here */
+    width: 150px;            /* desktop size, adjust here */
     transform: translateY(-130px);
   }
   .hero__inner h2{ margin-top: 2rem; }
